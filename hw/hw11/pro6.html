@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>p.430_문제6</title>
+</head>
+
+<body>
+    <h1>내가 살아온 인생 계산하기</h1>
+    <p/>
+    생년월일 입력 : <input type="text" id="birth" placeholder="0000-00-00">
+    <p/>
+    <input type="button" onclick="printstr()" value="나이 계산">
+    <p/>
+    당신은 태어나서부터 <span id="date">???</span>일 경과해서 지금은 <span id="age">???</span>살입니다.
+
+    <script>
+        function printstr() {
+            var birth = document.getElementById("birth").value;
+            var array = birth.split("-");
+            var today = new Date();
+            var myBirth = new Date();
+            myBirth.setFullYear(array[0]);
+            myBirth.setMonth(array[1] - 1);
+            myBirth.setDate(array[2]);
+
+            var printDate = document.getElementById("date");
+            var d = today.getTime() - myBirth.getTime();
+            var date = d / (24 * 60 * 60 * 1000) + 1;
+            printDate.textContent = date;
+
+            var printAge = document.getElementById("age");
+            var age = today.getFullYear() - myBirth.getFullYear() + 1;
+            printAge.textContent = age;
+        }
+        
+    </script>
+</body>
+
+</html>

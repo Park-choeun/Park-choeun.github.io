@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>p.430_문제5</title>
+</head>
+
+<body>
+    <h4>[Fruits_1]</h4>
+    <p id="fruits0"></p>
+
+    <h4>[Fruits_2]</h4>
+    <p id="fruits1"></p>
+
+    <h4>[Fruits_3]</h4>
+    <p id="fruits2"></p>
+
+    <script>
+        var fruits = new Array(
+            ["사과", "21,000원", "10개"],
+            ["참외", "18,000원", "20개"],
+            ["귤", "15,000원", "30개"]
+        );
+    
+        for (var i = 0; i < fruits.length; i++) {
+            var fdata = document.getElementById("fruits" + i);
+            fdata.textContent = fruits[i];
+        }
+    </script>
+</body>
+
+</html>
